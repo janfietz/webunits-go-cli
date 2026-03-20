@@ -56,4 +56,4 @@ jobs:
           go-version-file: go.mod
 
       - name: Build
-        run: go build -o webuntis .
+        run: go build -o webuntis ./cmd/webuntis
