@@ -9,8 +9,8 @@ import (
 
 	"github.com/spf13/cobra"
 	"golang.org/x/term"
-	"webuntis-go-cli/pkg/api"
-	"webuntis-go-cli/pkg/config"
+	"github.com/janfietz/webunits-go-cli/pkg/api"
+	"github.com/janfietz/webunits-go-cli/pkg/config"
 )
 
 var (

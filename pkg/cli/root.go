@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"webuntis-go-cli/pkg/config"
+	"github.com/janfietz/webunits-go-cli/pkg/config"
 )
 
 var (
@@ -24,9 +24,10 @@ const (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "webuntis",
-	Short: "WebUntis CLI for AI Agents",
-	Long:  `A Go CLI application optimized for AI agents to interact with the WebUntis API.`,
+	Use:     "webuntis",
+	Short:   "WebUntis CLI for AI Agents",
+	Long:    `A Go CLI application optimized for AI agents to interact with the WebUntis API.`,
+	Version: Version,
 }
 
 func Execute() {

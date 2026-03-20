@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"webuntis-go-cli/pkg/api"
-	"webuntis-go-cli/pkg/config"
+	"github.com/janfietz/webunits-go-cli/pkg/api"
+	"github.com/janfietz/webunits-go-cli/pkg/config"
 )
 
 // Helper to get authenticated client. Automatically re-authenticates

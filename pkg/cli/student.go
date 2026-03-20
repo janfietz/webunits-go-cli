@@ -6,7 +6,7 @@ import (
 	"strconv"
 
 	"github.com/spf13/cobra"
-	"webuntis-go-cli/pkg/config"
+	"github.com/janfietz/webunits-go-cli/pkg/config"
 )
 
 var studentsCmd = &cobra.Command{

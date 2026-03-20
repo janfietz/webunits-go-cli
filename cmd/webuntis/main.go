@@ -1,6 +1,6 @@
 package main
 
-import "webuntis-go-cli/pkg/cli"
+import "github.com/janfietz/webunits-go-cli/pkg/cli"
 
 func main() {
 	cli.Execute()

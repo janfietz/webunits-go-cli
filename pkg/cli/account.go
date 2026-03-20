@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"webuntis-go-cli/pkg/config"
+	"github.com/janfietz/webunits-go-cli/pkg/config"
 )
 
 var accountCmd = &cobra.Command{

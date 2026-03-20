@@ -1,11 +1,11 @@
-module webuntis-go-cli
+module github.com/janfietz/webunits-go-cli
 
 go 1.25.0
 
 require (
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.18.2
-	golang.org/x/term v0.41.0
+	golang.org/x/term v0.28.0
 )
 
 require (

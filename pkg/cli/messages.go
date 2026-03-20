@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"webuntis-go-cli/pkg/api"
+	"github.com/janfietz/webunits-go-cli/pkg/api"
 )
 
 var messagesCmd = &cobra.Command{
