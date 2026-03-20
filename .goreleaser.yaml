@@ -46,9 +46,6 @@ changelog:
       - "^chore:"
 
 release:
-  github:
-    owner: "{{ .Env.GITHUB_REPOSITORY_OWNER }}"
-    name: "{{ .ProjectName }}"
   draft: false
   prerelease: auto
   name_template: "v{{ .Version }}"
@@ -57,7 +54,7 @@ release:
 
     ### Quick install (Linux/macOS)
     ```bash
-    curl -sSfL https://github.com/{{ .Env.GITHUB_REPOSITORY_OWNER }}/webuntis/releases/download/v{{ .Version }}/install.sh | sh
+    curl -sSfL https://github.com/janfietz/webunits-go-cli/releases/download/v{{ .Version }}/install.sh | sh
     ```
 
     ### Download binary
