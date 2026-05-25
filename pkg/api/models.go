@@ -211,6 +211,42 @@ type FlatAbsence struct {
 	IsExcused    bool   `json:"isExcused"`
 }
 
+// --- ClassRegEvents Models (/api/classreg/classregevents) ---
+
+// ClassRegEventsResponse is the top-level response from the classregevents endpoint
+type ClassRegEventsResponse struct {
+	Data struct {
+		Rows []ClassRegEvent `json:"rows"`
+	} `json:"data"`
+}
+
+// ClassRegEvent represents a single class register entry (Klassenbucheintrag)
+type ClassRegEvent struct {
+	ID              int    `json:"id"`
+	ElementName     string `json:"elementName"`     // student first name OR class shortname (see ElemType)
+	SubjectName     string `json:"subjectName"`
+	CreatorName     string `json:"creatorName"`     // teacher name + short code, e.g. "Köhler (KOE)"
+	CreateDate      int    `json:"createDate"`      // YYYYMMDD
+	CreateTime      int    `json:"createTime"`      // HHMM (may be 3 digits when hour < 10)
+	EventReasonName string `json:"eventReasonName"` // nullable in JSON; "" when absent
+	CategoryName    string `json:"categoryName"`    // nullable in JSON; "" when absent
+	Text            string `json:"text"`
+	ElemType        string `json:"elemType"` // "STUDENT" or "CLASS"
+}
+
+// FlatClassRegEvent is the CLI output format for class register events
+type FlatClassRegEvent struct {
+	Date        string `json:"date"`
+	Time        string `json:"time"`
+	ElemType    string `json:"elemType"`
+	ElementName string `json:"elementName"`
+	Subject     string `json:"subject"`
+	Creator     string `json:"creator"`
+	Reason      string `json:"reason,omitempty"`
+	Category    string `json:"category,omitempty"`
+	Text        string `json:"text"`
+}
+
 // --- Homework Models (/api/homeworks/lessons) ---
 
 // HomeworkResponse is the top-level response from the homework endpoint

@@ -387,6 +387,24 @@ func (c *Client) GetAbsences(studentID int, startDate, endDate string) (*Absence
 	return &result, nil
 }
 
+// GetClassRegEvents fetches class register entries (Klassenbucheinträge) from the REST API.
+// startDate/endDate in YYYYMMDD format (e.g. "20260301").
+func (c *Client) GetClassRegEvents(studentID int, startDate, endDate string) (*ClassRegEventsResponse, error) {
+	path := fmt.Sprintf("/WebUntis/api/classreg/classregevents?startDate=%s&endDate=%s&studentId=%d",
+		startDate, endDate, studentID)
+
+	body, err := c.doRESTGet(path, false)
+	if err != nil {
+		return nil, err
+	}
+
+	var result ClassRegEventsResponse
+	if err := json.Unmarshal(body, &result); err != nil {
+		return nil, fmt.Errorf("failed to decode classregevents response: %w", err)
+	}
+	return &result, nil
+}
+
 // GetHomework fetches homework assignments from the REST API.
 // startDate/endDate in YYYYMMDD format.
 func (c *Client) GetHomework(startDate, endDate string) (*HomeworkResponse, error) {
